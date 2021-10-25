@@ -1,5 +1,7 @@
-import 'pages/login.dart';
+import 'package:pata_aqui/common/themes/app_bar.dart';
+
 import 'package:flutter/material.dart';
+import 'package:pata_aqui/pages/login.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Pata Aqui',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+      theme: buildAppBarTheme(),
       home: LoginPage(),
     );
   }

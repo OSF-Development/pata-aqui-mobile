@@ -7,6 +7,7 @@ class FormInput extends StatelessWidget {
   final Color? color;
   final FontWeight? fontWeight;
   final double? fontSize;
+  final InputBorder? border;
 
   FormInput(
     this.obscureText, {
@@ -15,6 +16,7 @@ class FormInput extends StatelessWidget {
     this.color,
     this.fontWeight,
     this.fontSize,
+    this.border,
   });
 
   @override
@@ -29,6 +31,7 @@ class FormInput extends StatelessWidget {
           fontWeight: fontWeight,
           fontSize: fontSize,
         ),
+        border: border,
       ),
     );
   }
