@@ -11,7 +11,6 @@ class HomePage extends StatelessWidget {
     );
   }
 
-
   buildAppBar() {
     return AppBar(
       title: Text(
@@ -22,7 +21,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-  
 
   buildInputContainer(BuildContext context, String labelText) {
     return Container(
@@ -42,87 +40,66 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      child: FormInput(
-        false,
-        label: labelText,
-        border: InputBorder.none,
+      child: buildInputContainer(
+        context,
+        'Procure por um companheirinho',
       ),
     );
   }
 
   buildBody(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(
-          top: 60,
-          left: 40,
-          right: 40,
-          bottom: 200,
-        ),
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color(0xffffc2bb),
-              Color(0xffd8bfd8),
-            ],
-          ),
-        ),
-        child: Column(
-          children: [
-            buildInputContainer(
-              context,
-              'Procure por um companheirinho',
-            ),
-            SizedBox(
-              height: 35,
-            ),
-            Placeholder(
-              fallbackHeight: 200,
-              color: Colors.red,
-              strokeWidth: 5,
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Placeholder(
-                  fallbackHeight: 140,
-                  fallbackWidth: 140,
-                  color: Colors.red,
-                  strokeWidth: 5,
-                ),
-                Placeholder(
-                  fallbackHeight: 140,
-                  fallbackWidth: 140,
-                  color: Colors.red,
-                  strokeWidth: 5,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Placeholder(
-                  fallbackHeight: 140,
-                  fallbackWidth: 140,
-                  color: Colors.red,
-                  strokeWidth: 5,
-                ),
-                Placeholder(
-                  fallbackHeight: 140,
-                  fallbackWidth: 140,
-                  color: Colors.red,
-                  strokeWidth: 5,
-                ),
-              ],
-            )
+      padding: EdgeInsets.only(
+        top: 60,
+        left: 40,
+        right: 40,
+        bottom: 200,
+      ),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xffffc2bb),
+            Color(0xffd8bfd8),
           ],
-        ));
+        ),
+      ),
+      child: GridView.count(
+        mainAxisSpacing: 50,
+        crossAxisSpacing: 50,
+        crossAxisCount: 2,
+        children: <Widget>[
+          Container(
+            child: Placeholder(
+              fallbackHeight: 50,
+              fallbackWidth: 50,
+              color: Colors.red,
+            ),
+          ),
+          Container(
+            child: Placeholder(
+              fallbackHeight: 50,
+              fallbackWidth: 50,
+              color: Colors.red,
+            ),
+          ),
+          Container(
+            child: Placeholder(
+              fallbackHeight: 50,
+              fallbackWidth: 50,
+              color: Colors.red,
+            ),
+          ),
+          Container(
+            child: Placeholder(
+              fallbackHeight: 50,
+              fallbackWidth: 50,
+              color: Colors.red,
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
