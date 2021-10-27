@@ -62,10 +62,26 @@ class _CadPetState extends State<CadPet> {
     return Column(
       children: <Widget>[
         buildInputContainer(context, 'Nome:'),
+        SizedBox(
+          height: 20,
+        ),
         buildInputContainer(context, 'Raça:'),
+        SizedBox(
+          height: 20,
+        ),
         buildInputContainer(context, 'Idade:'),
+        SizedBox(
+          height: 15,
+        ),
         Row(
           children: [
+            Padding(
+              padding: EdgeInsets.only(left: 8),
+              child: Text(
+                'Sexo:',
+                style: TextStyle(fontSize: 16),
+              ),
+            ),
             buildRadioGender(
               'Macho',
               PetGender.male,
@@ -97,14 +113,10 @@ class _CadPetState extends State<CadPet> {
               'Não',
               Vaccinated.no,
             ),
-            buildRadioVaccinated(
-              'Não sei',
-              Vaccinated.iDontKnow,
-            ),
           ],
         ),
         SizedBox(
-          height: 200,
+          height: 100,
         ),
         FormButton(
           30,
